@@ -1,13 +1,20 @@
 from typing import Optional
 import fastapi
 import myfile
+import os
 
 app = fastapi.FastAPI()
 
-
 @app.get("/")
-async def read_root():
-    return {"message": "Hello World from FastAPI sample"}
+async def read_root(name: str = None):
+    name_to_print = os.getenv("DEFAULT_NAME")
+    if name_to_print is None:
+        name_to_print = "World"
+
+    if name is not None:
+        name_to_print = name
+
+    return {"message": "Hello {} from FastAPI sample".format(name_to_print)}
 
 
 @app.get("/items/{item_id}")

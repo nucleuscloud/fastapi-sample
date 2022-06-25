@@ -1,0 +1,6 @@
+cliVersion: nucleus-cli/v1alpha1
+spec:
+  serviceName: fastapi-sample
+  serviceRuntime: fastapi
+  vars:
+    DEFAULT_NAME: Everybody
