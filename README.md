@@ -14,13 +14,13 @@ pip3 install -r requirements.txt
 ```sh
 uvicorn main:app
 
-curl localhost:8080
-curl "localhost:8080?name=nick"
+curl localhost:8000
+curl "localhost:8000?name=nick"
 ```
 
 Set a default name:
 ```sh
 DEFAULT_NAME=Everybody uvicorn main:app
 
-curl localhost:8080
+curl localhost:8000
 ```
